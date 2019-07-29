@@ -6,17 +6,12 @@
         <div>
             <h1><a href="/">Udit's blog</a></h1>
         </div>
-
+        {% for post in posts %}
         <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">My encounter with Python</a></h2>
-            <p>I got introduced to the Python programming language sometime in 2015. And since then there was no turning back. Undoubtedly it is one of the best programming languages in the world today.</p>
+            <p>published: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
         </div>
-
-        <div>
-            <p>published: 14.06.2014, 12:14</p>
-            <h2><a href="">Django!!!</a></h2>
-            <p>I picked up Django just a few days back adn here I am today making this blog. So far, so good!</p>
-        </div>
+        {% endfor %}
     </body>
 </html>
